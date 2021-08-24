@@ -1,20 +1,25 @@
 import React, {useEffect, useState} from 'react';
 import Post from "../Post";
 
-export default function CategoryItem({category}) {
+export default function CategoryItem(props) {
     const [post, setPost] = useState([]);
+    const [postActive, setPostActive] = useState(true);
 
     useEffect(() => {
-        fetch(`https://api.chucknorris.io/jokes/random?category=${category}`)
+        fetch(`https://api.chucknorris.io/jokes/random?category=${props.category}`)
             .then(response => response.json())
             .then(post => {
                 setPost(post)
             })
-    }, [category])
+    }, [props.category])
 
-    function handleClick(post) {
-        return <Post post={post}/>
+    function clickHandler() {
+        setPostActive(!postActive);
+        props.onShowPost(post, postActive)
+        props.postActive(postActive);
     }
 
-    return <li onClick={()=> handleClick(post)}>{category}</li>
+
+    return <li onClick={clickHandler}
+    >{props.category}</li>
 }

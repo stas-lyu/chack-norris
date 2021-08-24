@@ -5,11 +5,12 @@ import Header from "./Header";
 import Post from "./Post";
 import Loader from "./Loader";
 
-// import Loader from "./Loader";
-
 function App() {
     const [todos, setTodos] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [text, setText] = useState('');
+    const [statePost, setStatePost] = useState(false);
+
 
     useEffect(() => {
         fetch('https://api.chucknorris.io/jokes/categories')
@@ -20,10 +21,12 @@ function App() {
             })
     }, [])
 
-    function showPost(post) {
-        setTodos(todos.filter((item) => {
-            return item === post.title
-        }))
+    function handlerShowPost(post) {
+        setText(post.value)
+    }
+
+    function handlerActive(state) {
+        setStatePost(state)
     }
 
     return (
@@ -34,9 +37,9 @@ function App() {
                 <div className="categories-container">
                     {loading && <Loader/>}
                     {todos.length ? (
-                        <CategoryList categories={todos}/>
+                        <CategoryList postState={handlerActive} postText={handlerShowPost} categories={todos}/>
                     ) : loading ? null : (<p>No categories</p>)}
-                    <Post onCreate={showPost} className={'post'}/>
+                    <Post text={text} state={statePost} postText={handlerShowPost} className={'post'}/>
                 </div>
             </div>
         </div>
