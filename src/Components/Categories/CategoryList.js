@@ -8,7 +8,6 @@ export default function CategoryList({postText, categories, postState}) {
 
     function handlerPostActive(state) {
         postState(state)
-        console.log(state)
     }
 
     return (

@@ -26,7 +26,9 @@ function App() {
     }
 
     function handlerActive(state) {
-        setStatePost(state)
+        if (!state) {
+            return false
+        } else setStatePost(state)
     }
 
     return (
