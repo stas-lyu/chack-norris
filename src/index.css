@@ -11,3 +11,131 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+body {
+  background: #E5E5E5;
+}
+
+.header {
+  height: 79px;
+  display: flex;
+  align-items: center;
+  background-color: #422ED4;
+}
+
+.avatar {
+  width: 43px;
+  height: 43px;
+}
+.name {
+  font-size: 16px;
+  color: #fff;
+  margin-left: 10px;
+}
+
+.logo {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.container {
+  margin: 0 auto;
+  width: 1120px;
+}
+
+.categories-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+  text-align: center;
+  font-size: 50px;
+}
+
+.categories-list {
+  max-width: 100%;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: space-evenly;
+  list-style: none;
+  padding-left: 0;
+}
+
+.categories-list li {
+  height: 57px;
+  width: 170px;
+  font-weight: 800;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #000;
+  background-color: #fff;
+  transition: all linear 0.4s;
+  margin: 20px 0;
+}
+
+.categories-list li:hover {
+  color: #fff;
+  cursor: pointer;
+  background-color: #422ED4;
+}
+
+.post-container {
+  margin-top: 120px;
+  width: 100%;
+  position: relative;
+}
+
+.post-img {
+  width: 122px;
+  height: 258px;
+  position: absolute;
+  z-index: 1;
+  top: -138px;
+  right: 20px;
+}
+
+.post-text {
+  position: absolute;
+  z-index: 2;
+  height: 162px;
+  width: 100%;
+  background-color: #422ED4;
+  box-shadow: 0px 100px 80px rgba(80, 76, 103, 0.07), 0px 0px 10.0172px rgba(80, 76, 103, 0.035);
+  border-radius: 25px;
+  padding: 24px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 150%;
+}
+
+.lds-dual-ring {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+}
+.lds-dual-ring:after {
+  content: " ";
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid #c40808;
+  border-color: #c40808 transparent #c40808 transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
