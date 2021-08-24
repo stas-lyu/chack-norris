@@ -1,8 +1,8 @@
 import './App.css';
 import React, {useEffect, useState} from "react";
-import CategoryList from "./Categories/CategoryList";
-import Header from "./Header";
-import Post from "./Post";
+import CategoryList from "./Components/Categories/CategoryList";
+import Header from "./Components/Header";
+import Post from "./Components/Post";
 import Loader from "./Loader";
 
 function App() {

@@ -1,5 +1,5 @@
 import React from "react";
-import chackImg from './chack.png'
+import chackImg from '../chack.png'
 
 export default function Post({text, state}) {
     return (<div className={state ? 'post-container active' : 'post-container'}>
