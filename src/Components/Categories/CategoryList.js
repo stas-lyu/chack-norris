@@ -2,6 +2,7 @@ import React from "react";
 import CategoryItem from './CategoryItem'
 
 export default function CategoryList({postText, categories, postState}) {
+
     function handlerShowPost(post) {
         postText(post)
     }
@@ -12,7 +13,7 @@ export default function CategoryList({postText, categories, postState}) {
 
     return (
         <ul className={'categories-list'}>
-            {categories.map((category) => {
+            {categories.map((category, index) => {
                 return <CategoryItem postActive={handlerPostActive} onShowPost={handlerShowPost} key={category}
                                      category={category}/>
             })}

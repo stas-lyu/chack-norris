@@ -4,7 +4,6 @@ export default function CategoryItem({category, onShowPost, postActive}) {
     const [post, setPost] = useState([]);
     const [isActive, setIsActive] = useState(true);
 
-
     useEffect(() => {
         fetch(`https://api.chucknorris.io/jokes/random?category=${category}`)
             .then(response => response.json())
@@ -13,7 +12,8 @@ export default function CategoryItem({category, onShowPost, postActive}) {
             })
     }, [category])
 
-    function clickHandler() {
+
+    function clickHandler(e) {
         setIsActive(!isActive);
         onShowPost(post);
         postActive(isActive);
